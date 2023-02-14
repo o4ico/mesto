@@ -20,48 +20,87 @@
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <p class="profile__subtitle">Исследователь океана</p>
         </div>
-        <form class="profile__">
+        <form class="profile__button">
           <input class="profile__edit-button" type="button">
         </form>
       </div>
-      <form class="profile__">
+      <form class="profile__button">
         <input class="profile__add-button" type="button">
       </form>
     </section>
-    <ul class="cards">
-      <li class="cards__item">
+    <ul class="card">
+      <li class="card__item">
         <img class="card__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="фотография места"></img>
-        <p class="card__text"></p>
-        <div class="card__like-button"></div>
+        <div class="card__caption">
+          <p class="card__text">Карачаевск</p>
+          <form class="card__button">
+            <input class="card__like-button" type="button">
+          </form>
+        </div>
       </li>
-      <li class="cards__item">
+      <li class="card__item">
         <img class="card__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt="фотография места"></img>
-        <p class="card__text"></p>
-        <div class="card__like-button"></div>
+        <div class="card__caption">
+          <p class="card__text">Гора Эльбрус</p>
+          <form class="card__button">
+            <input class="card__like-button" type="button">
+          </form>
+        </div>
       </li>
-      <li class="cards__item">
+      <li class="card__item">
         <img class="card__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt="фотография места"></img>
-        <p class="card__text"></p>
-        <div class="card__like-button"></div>
+        <div class="card__caption">
+          <p class="card__text">Домбай</p>
+          <form class="card__button">
+            <input class="card__like-button" type="button">
+          </form>
+        </div>
       </li>
-      <li class="cards__item">
-        <img class="card__image" src="./images/kirill-pershin-1088404-unsplash-1.jpg" alt="фотография места"></img>
-        <p class="card__text"></p>
-        <div class="card__like-button"></div>
-      </li>
-      <li class="cards__item">
+      <li class="card__item">
         <img class="card__image" src="./images/kirill-pershin-1404681-unsplash-1.jpg" alt="фотография места"></img>
-        <p class="card__text"></p>
-        <div class="card__like-button"></div>
+        <div class="card__caption">
+          <p class="card__text">Гора Эльбрус</p>
+          <form class="card__button">
+            <input class="card__like-button" type="button">
+          </form>
+        </div>
       </li>
-      <li class="cards__item">
+      <li class="card__item">
         <img class="card__image" src="./images/kirill-pershin-1556355-unsplash-1.jpg" alt="фотография места"></img>
-        <p class="card__text"></p>
-        <div class="card__like-button"></div>
+        <div class="card__caption">
+          <p class="card__text">Домбай</p>
+          <form class="card__button">
+            <input class="card__like-button" type="button">
+          </form>
+        </div>
+      </li>
+      <li class="card__item">
+        <img class="card__image" src="./images/kirill-pershin-1088404-unsplash-1.jpg" alt="фотография места"></img>
+        <div class="card__caption">
+          <p class="card__text">Карачаево-Черкесия</p>
+          <form class="card__button">
+            <input class="card__like-button" type="button">
+          </form>
+        </div>
       </li>
     </ul>
   </main>
-  <footer class="footer"></footer>
-  <script src="script.js"></script>
+  <footer class="footer">
+    <p class="footer__author">&#169; 2020 Mesto Russia</p>
+  </footer>
+  <section class="popup">
+    <div class="popup__container">
+      <button class="popup__close-button"></button>
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <form class="popup__form">
+        <input class="popup__name" type="text" placeholder="Имя">
+        <input class="popup__about-me" type="text" placeholder="О себе">
+      </form>
+      <form class="popup__button">
+        <input class="popup__submit-button" type="submit" value="Сохранить">
+      </form>
+    </div>
+  </section>
+  <script src="./script.js"></script>
 </body>
 </html>
