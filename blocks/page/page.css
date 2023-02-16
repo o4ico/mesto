@@ -64,7 +64,6 @@ input:hover {
 
 input[type="text"]:hover {
   opacity: 1;
-  padding: 0;
 }
 
 button:hover {
