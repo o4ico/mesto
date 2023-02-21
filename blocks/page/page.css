@@ -8,64 +8,50 @@
   flex-direction: column;
 }
 
-input::placeholder {
+.popup__text::placeholder {
+  font-family: inherit;
   color: #000;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
 }
 
-input::-webkit-input-placeholder {
+.popup__text::-webkit-input-placeholder {
+  font-family: inherit;
   color: #000;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
 }
 
-input:-moz-placeholder {
+.popup__text:-moz-placeholder {
+  font-family: inherit;
   color: #000;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
 }
 
-input::-moz-placeholder {
+.popup__text::-moz-placeholder {
+  font-family: inherit;
   color: #000;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
 }
 
-input:-ms-input-placeholder {
+.popup__text:-ms-input-placeholder {
+  font-family: inherit;
   color: #000;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
 }
 
-input::-ms-input-placeholder {
+.popup__text::-ms-input-placeholder {
+  font-family: inherit;
   color: #000;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
-}
-
-input {
-  font-family: inherit; 
-}
-
-input:focus {
-  outline: none;
-}
-
-input:hover {
-  opacity: 0.6;
-}
-
-input[type="text"]:hover {
-  opacity: 1;
-}
-
-button:hover {
-  opacity: 0.6;
 }

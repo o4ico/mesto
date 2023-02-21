@@ -2,41 +2,33 @@
   width: 150px;
   height: 50px;
   background-color: #000;
-  background-image: url(../../../images/Add\ Button.png);
-  background-size: cover;
+  background-image: url(../../../images/add.svg);
+  background-repeat: no-repeat;
+  background-size: auto;
   background-position: center;
-  margin: 34px 0 0;
-  padding: 0;
+  margin: 34px 0 0; 
+  padding: 14px 64px;
   border: none;
+  border: 2px solid #fff;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
-@media screen and (min-width: 320px) and (max-width: 495px) {
+.profile__add-button:hover {
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 320px) and (max-width: 619px) {
 
   .profile__add-button {
-  background-image: url(../../../images/Add\ Button-1.png);
   width: 282px;
-  height: 50px;
-  margin: 33px 0 0 0;
-  grid-row: 2/3;
+  margin: 32px 0 0;
   }
 }
 
-@media screen and (min-width: 495px) and (max-width: 620px) {
+@media screen and (min-width: 620px) and (max-width: 795px) {
 
   .profile__add-button {
-  background-image: url(../../../images/Add\ Button-1.png);
-  width: 282px;
-  height: 50px;
-  margin: 36px 0 0 0;
-  }
-}
-
-@media screen and (min-width: 621px) and (max-width: 795px) {
-
-  .profile__add-button {
-  background-image: url(../../../images/Add\ Button-1.png);
-  width: 282px;
-  height: 50px;
-  margin: 0 0 0 150px;
+  margin: 14px auto 0;
   }
 }

@@ -9,98 +9,92 @@
 </head>
 <body class="page">
   <header class="header">
-    <img class="logo" src="./images/Vector.png">
+    <img class="header__logo" src="./images/logo.svg" alt="логотип Место">
     <div class="header__line"></div>
   </header>
   <main class="main">
     <section class="profile">
       <div class="profile__conteiner">
-        <img class="profile__avatar" src="./images/image.jpg">
+        <img class="profile__avatar" src="./images/image.jpg" alt="аватар">
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <p class="profile__subtitle">Исследователь океана</p>
         </div>
-        <form class="profile__button">
-          <input class="profile__edit-button" type="button">
-        </form>
+          <button class="profile__edit-button" type="button">
       </div>
-      <form class="profile__button">
-        <input class="profile__add-button" type="button">
-      </form>
+        <button class="profile__add-button" type="button">
     </section>
-    <ul class="card">
-      <li class="card__item">
+    <section class="cards">
+      <article class="card">
         <img class="card__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="фотография места">
         <div class="card__caption">
-          <p class="card__text">Карачаевск</p>
-          <form class="card__button">
-            <input class="card__like-button" type="button">
-          </form>
+          <h2 class="card__text">Карачаевск</h2>
+          <div class="card__button">
+            <button class="card__like-button" type="button">
+          </div>
         </div>
-      </li>
-      <li class="card__item">
+      </article>
+      <article class="card">
         <img class="card__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt="фотография места">
         <div class="card__caption">
-          <p class="card__text">Гора Эльбрус</p>
-          <form class="card__button">
-            <input class="card__like-button" type="button">
-          </form>
+          <h2 class="card__text">Гора Эльбрус</h2>
+          <div class="card__button">
+            <button class="card__like-button" type="button">
+          </div>
         </div>
-      </li>
-      <li class="card__item">
+      </article>
+      <article class="card">
         <img class="card__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt="фотография места">
         <div class="card__caption">
-          <p class="card__text">Домбай</p>
-          <form class="card__button">
-            <input class="card__like-button" type="button">
-          </form>
+          <h2 class="card__text">Домбай</h2>
+          <div class="card__button">
+            <button class="card__like-button" type="button">
+          </div>
         </div>
-      </li>
-      <li class="card__item">
-        <img class="card__image" src="./images/kirill-pershin-1404681-unsplash-1.jpg" alt="фотография места">
+      </article>
+      <article class="card">
+        <img class="card__image" src="./images/kirill-pershin-1404681-unsplash.jpg" alt="фотография места">
         <div class="card__caption">
-          <p class="card__text">Гора Эльбрус</p>
-          <form class="card__button">
-            <input class="card__like-button" type="button">
-          </form>
+          <h2 class="card__text">Гора Эльбрус</h2>
+          <div class="card__button">
+            <button class="card__like-button" type="button">
+          </div>
         </div>
-      </li>
-      <li class="card__item">
-        <img class="card__image" src="./images/kirill-pershin-1556355-unsplash-1.jpg" alt="фотография места">
+      </article>
+      <article class="card">
+        <img class="card__image" src="./images/kirill-pershin-1556355-unsplash.jpg" alt="фотография места">
         <div class="card__caption">
-          <p class="card__text">Домбай</p>
-          <form class="card__button">
-            <input class="card__like-button" type="button">
-          </form>
+          <h2 class="card__text">Домбай</h2>
+          <div class="card__button">
+            <button class="card__like-button" type="button">
+          </div>
         </div>
-      </li>
-      <li class="card__item">
-        <img class="card__image" src="./images/kirill-pershin-1088404-unsplash-1.jpg" alt="фотография места">
+      </article>
+      <article class="card">
+        <img class="card__image" src="./images/kirill-pershin-1088404-unsplash.jpg" alt="фотография места">
         <div class="card__caption">
-          <p class="card__text">Карачаево-Черкесия</p>
-          <form class="card__button">
-            <input class="card__like-button" type="button">
-          </form>
+          <h2 class="card__text">Карачаево-Черкесия</h2>
+          <div class="card__button">
+            <button class="card__like-button" type="button">
+          </div>
         </div>
-      </li>
-    </ul>
+      </article>
+    </section>
   </main>
   <footer class="footer">
     <p class="footer__author">&#169; 2023 Mesto Russia</p>
   </footer>
-  <section class="popup">
+  <div class="popup">
     <div class="popup__container">
-      <button class="popup__close-button"></button>
+      <button class="popup__close-button" type="button"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form">
-        <input class="popup__name" type="text" placeholder="Имя">
-        <input class="popup__about-me" type="text" placeholder="О себе">
-      </form>
-      <form class="popup__button">
+      <form class="popup__form" name="popup">
+        <input class="popup_form_name popup__text" type="text" placeholder="Имя" name="popup">
+        <input class="popup_form_about-me  popup__text" type="text" placeholder="О себе" name="popup">
         <input class="popup__submit-button" type="submit" value="Сохранить">
       </form>
     </div>
-  </section>
+  </div>
   <script src="./scripts/script.js"></script>
 </body>
 </html>
