@@ -4,9 +4,9 @@ let popup = document.querySelector('.popup');
 
 let formElement = document.querySelector('.popup__form');
 
-let nameInput = document.querySelector('.popup__name');
+let nameInput = document.querySelector('.popup_form_name');
 
-let jobInput = document.querySelector('.popup__about-me');
+let jobInput = document.querySelector('.popup_form_about-me');
 
 let profileTitle = document.querySelector('.profile__title');
 

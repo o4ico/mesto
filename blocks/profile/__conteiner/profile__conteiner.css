@@ -1,6 +1,7 @@
 .profile__conteiner {
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
 }
 
 @media screen and (min-width: 320px) and (max-width: 495px) {
@@ -11,6 +12,7 @@
   grid-template-rows: repeat(2, min-content);
   justify-items: center;
   justify-content: center;
+  align-items: start;
   }
 }
 

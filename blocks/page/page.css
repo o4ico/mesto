@@ -8,64 +8,50 @@
   flex-direction: column;
 }
 
-input::placeholder {
-  color: #000;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-}
-
-input::-webkit-input-placeholder {
-  color: #000;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-}
-
-input:-moz-placeholder {
-  color: #000;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-}
-
-input::-moz-placeholder {
-  color: #000;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-}
-
-input:-ms-input-placeholder {
-  color: #000;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-}
-
-input::-ms-input-placeholder {
-  color: #000;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-}
-
-input {
+.popup__text::placeholder {
   font-family: inherit; 
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
 }
 
-input:focus {
-  outline: none;
+.popup__text::-webkit-input-placeholder {
+  font-family: inherit; 
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
 }
 
-input:hover {
-  opacity: 0.6;
+.popup__text:-moz-placeholder {
+  font-family: inherit; 
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
 }
 
-input[type="text"]:hover {
-  opacity: 1;
+.popup__text::-moz-placeholder {
+  font-family: inherit; 
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
 }
 
-button:hover {
-  opacity: 0.6;
+.popup__text:-ms-input-placeholder {
+  font-family: inherit; 
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.popup__text::-ms-input-placeholder {
+  font-family: inherit; 
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
 }

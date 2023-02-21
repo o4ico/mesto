@@ -4,6 +4,7 @@
   justify-content: space-between;
   max-width: 880px;
   margin: 0 auto 50px;
+  align-items: flex-start;
 }
 
 @media screen and (min-width: 320px) and (max-width: 495px) {
@@ -11,8 +12,9 @@
   .profile {
   flex-direction: column;
   justify-items: center;
+  align-items: center;
   max-width: 282px;
-  margin: 0 auto 33px;
+  margin: 0 auto 38px;
   }
 }
 
@@ -21,6 +23,7 @@
   .profile {
   flex-direction: column;
   justify-items: center;
+  align-items: center;
   align-items: center;
   width: calc(100% - 38px);
   }
@@ -32,6 +35,7 @@
   display: grid;
   grid-template-columns: minmax(min-content, max-content);
   width: 581px;
+  justify-content: center;
   }
 }
 

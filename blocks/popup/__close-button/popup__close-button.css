@@ -5,12 +5,17 @@
   width: 32px;
   height: 32px;
   background-color: rgba(0, 0, 0, 0);
-  background-image: url(../../../images/Close\ Icon.png);
+  background-image: url(../../../images/Close\ Icon.svg);
   background-size: cover;
   background-position: center;
   margin: 0;
   padding: 0;
   border: none;
+  cursor: pointer;
+}
+
+.popup__close-button:hover {
+  opacity: 0.6;
 }
 
 @media screen and (min-width: 320px) and (max-width: 560px) {
