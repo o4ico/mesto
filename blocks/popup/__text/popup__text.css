@@ -19,3 +19,50 @@
   margin-bottom: 18px;
 }
 
+.popup__text::placeholder {
+  font-family: inherit;
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.popup__text::-webkit-input-placeholder {
+  font-family: inherit;
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.popup__text:-moz-placeholder {
+  font-family: inherit;
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.popup__text::-moz-placeholder {
+  font-family: inherit;
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.popup__text:-ms-input-placeholder {
+  font-family: inherit;
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.popup__text::-ms-input-placeholder {
+  font-family: inherit;
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}

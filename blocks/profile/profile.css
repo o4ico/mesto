@@ -38,20 +38,11 @@
   }
 }
 
-@media screen and (min-width: 796px) and (max-width: 950px) {
+@media screen and (min-width: 796px) and (max-width: 1050px) {
     
   .profile {
-  display: grid; /* */
+  display: grid;
   grid-template-columns: repeat(2, minmax(min-content, max-content));
-  width: calc(100% - 100px);
-  }
-}
-
-@media screen and (min-width: 951px) and (max-width: 1050px) {
-    
-  .profile {
-  display: grid; /* */
-  grid-template-columns: repeat(2, minmax(min-content, max-content));
-  width: calc(100% - 200px);
+  width: calc(100% - 150px);
   }
 }

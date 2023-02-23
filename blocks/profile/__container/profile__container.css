@@ -1,4 +1,4 @@
-.profile__conteiner {
+.profile__container {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -6,7 +6,7 @@
 
 @media screen and (min-width: 320px) and (max-width: 495px) {
 
-  .profile__conteiner {
+  .profile__container {
   display: grid;
   grid-template-columns: repeat(2, minmax(min-content, max-content));
   grid-template-rows: repeat(2, min-content);
@@ -18,7 +18,7 @@
 
 @media screen and (min-width: 495px) and (max-width: 620px) {
 
-  .profile__conteiner {
+  .profile__container {
   display: grid;
   grid-template-columns: repeat(2, minmax(min-content, max-content));
   grid-template-rows: repeat(2, min-content);
