@@ -14,6 +14,8 @@ const openPopup = (popup) => {
 //попап с картинкой
 const imagePopup = document.querySelector('.popup_image');
 const imagePopupClose = imagePopup.querySelector('.popup__close-button');
+const image = document.querySelector('.popup__image');
+const title = document.querySelector('.popup__image-title');
 
 const createCard = (name, link) => {
   
@@ -41,12 +43,7 @@ const createCard = (name, link) => {
   });
 
   //картинка
-  const imageButton = cardTemplate.querySelector('.card__image');
- 
-  const image = document.querySelector('.popup__image');
-  const title = document.querySelector('.popup__image-title');
-
-  imageButton.addEventListener('click', function () {
+  cardImage.addEventListener('click', function () {
 
     openPopup(imagePopup);
     image.src = cardImage.src;
@@ -56,10 +53,6 @@ const createCard = (name, link) => {
   
   return cardTemplate;
 }
-
-const cardTemplate = createCard();
-
-
 
 //добавление карточки
 const addButton = document.querySelector('.profile__add-button');
@@ -82,10 +75,11 @@ function handleFormSubmitAdd (evt, name, link) {
   name = placeNameInput.value;
   link = linkInput.value;
 
-  closePopup(addPopup);
-
   const cardTemplate = createCard(name, link);
   cardContainer.prepend(cardTemplate);
+
+  closePopup(addPopup);
+
   placeNameInput.value = '';
   linkInput.value = '';
 }
