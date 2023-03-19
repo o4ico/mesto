@@ -1,14 +1,16 @@
 const cardContainer = document.querySelector('.cards');
 
-const placeNameInput = document.querySelector('.popup__text_form_place-name');
-const linkInput = document.querySelector('.popup__text_form_picture-link');
+const placeNameInput = document.querySelector('.popup__input_form_place-name');
+const linkInput = document.querySelector('.popup__input_form_picture-link');
 
 const closePopup = (popup) => {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupEsc);
 }
 
 const openPopup = (popup) => {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupEsc);
 }
 
 //попап с картинкой
@@ -92,8 +94,8 @@ imagePopupClose.addEventListener('click', function () {
 
 
 //редактирование профиля
-const nameInput = document.querySelector('.popup__text_form_name');
-const jobInput = document.querySelector('.popup__text_form_about-me');
+const nameInput = document.querySelector('.popup__input_form_name');
+const jobInput = document.querySelector('.popup__input_form_about-me');
 
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
@@ -137,3 +139,25 @@ const addInitialCards = initialCards.forEach(function(item) {
   cardContainer.append(cardTemplate);
 
 });
+
+// закрытие popup на esc
+const closePopupEsc = (evt) => {
+
+  if (evt.key === 'Escape') {
+    const popupAll = document.querySelector('.popup_opened');
+    closePopup(popupAll);
+  };
+};
+
+// закрытие popup на оверлей
+const popupList = Array.from(document.querySelectorAll('.popup')); // все попапы на странице
+popupList.forEach((popup) => { // итерируем массив. объявляя каждый попап в переменную popup
+  popup.addEventListener('mouseup', (evt) => { // на каждый попап устанавливаем слушателя события
+    const targetClassList = evt.target.classList; // запишем в переменную класс элемента, на котором произошло событие
+    if (targetClassList.contains('popup')) { // проверяем наличие класса попапа
+      closePopup(popup); // если один из классов присутствует, то закрываем попап
+    }
+  })
+});
+
+

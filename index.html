@@ -43,9 +43,11 @@
     <div class="popup__container">
       <button class="popup__close-button" type="button"></button>
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form" name="editProfile">
-        <input class="popup__text popup__text_form_name" type="text" placeholder="Имя" name="name">
-        <input class="popup__text popup__text_form_about-me" type="text" placeholder="О себе" name="about-me">
+      <form class="popup__form" name="editProfile" novalidate>
+        <input class="popup__input popup__input_form_name" type="text" placeholder="Имя" name="name" id="name" required minlength="2" maxlength="40">
+        <span class="popup__text-error name-text-error"></span>
+        <input class="popup__input popup__input_form_about-me" type="text" placeholder="О себе" name="about-me" id="about-me" required minlength="2" maxlength="200">
+        <span class="popup__text-error about-me-text-error"></span>
         <input class="popup__submit-button popup__submit-button_edit-profile" type="submit" value="Сохранить">
       </form>
     </div>
@@ -54,9 +56,11 @@
     <div class="popup__container">
       <button class="popup__close-button" type="button"></button>
       <h2 class="popup__title">Новое место</h2>
-      <form class="popup__form" name="addCard">
-        <input class="popup__text popup__text_form_place-name" type="text" placeholder="Название" name="place-name">
-        <input class="popup__text popup__text_form_picture-link" type="text" placeholder="Ссылка на картинку" name="picture-link">
+      <form class="popup__form" name="addCard" novalidate>
+        <input class="popup__input popup__input_form_place-name" type="text" placeholder="Название" name="place-name" id="place-name" required minlength="2" maxlength="30">
+        <span class="popup__text-error place-name-text-error"></span>
+        <input class="popup__input popup__input_form_picture-link" type="url" placeholder="Ссылка на картинку" name="picture-link" id="picture-link" required >
+        <span class="popup__text-error picture-link-text-error"></span>
         <input class="popup__submit-button popup__submit-button_add-card" type="submit" value="Создать">
       </form>
     </div>
@@ -70,5 +74,6 @@
   </div>
   <script src="./scripts/cards.js"></script>
   <script src="./scripts/script.js"></script>
+  <script src="./scripts/validate.js"></script>
 </body>
 </html>
