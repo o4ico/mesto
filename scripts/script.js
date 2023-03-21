@@ -66,6 +66,9 @@ const buttonSubmitAddPopup = addPopup.querySelector('.popup__submit-button_add-c
 
 addButton.addEventListener('click', function() {
   openPopup(addPopup);
+  addForm.reset();
+  hideInputError(validForm, addForm, placeNameInput);
+  hideInputError(validForm, addForm, linkInput);
 });
 
 buttonCloseAddPopup.addEventListener('click', function() {
@@ -115,12 +118,12 @@ editButton.addEventListener('click', function() {
 
   jobInput.value = profileSubtitle.textContent;
 
+  hideInputError(validForm, editForm, nameInput);
+  hideInputError(validForm, editForm, jobInput);
 });
 
 buttonCloseEditPopup.addEventListener('click', function () {
   closePopup(editPopup);
-  hideInputError(validForm, editForm, nameInput);
-  hideInputError(validForm, editForm, jobInput);
 });
 
 function handleFormSubmitEdit (evt) {
