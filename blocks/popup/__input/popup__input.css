@@ -21,7 +21,7 @@
 
 .popup__input::placeholder {
   font-family: inherit;
-  color: #000;
+  color: #C4C4C4;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
@@ -29,7 +29,7 @@
 
 .popup__input::-webkit-input-placeholder {
   font-family: inherit;
-  color: #000;
+  color: #C4C4C4;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
@@ -37,7 +37,7 @@
 
 .popup__input:-moz-placeholder {
   font-family: inherit;
-  color: #000;
+  color: #C4C4C4;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
@@ -45,7 +45,7 @@
 
 .popup__input::-moz-placeholder {
   font-family: inherit;
-  color: #000;
+  color: #C4C4C4;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
@@ -53,7 +53,7 @@
 
 .popup__input:-ms-input-placeholder {
   font-family: inherit;
-  color: #000;
+  color: #C4C4C4;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
@@ -61,7 +61,7 @@
 
 .popup__input::-ms-input-placeholder {
   font-family: inherit;
-  color: #000;
+  color: #C4C4C4;
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
