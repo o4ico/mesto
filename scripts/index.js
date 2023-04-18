@@ -64,7 +64,7 @@ editButton.addEventListener('click', function() {
 
   jobInput.value = profileSubtitle.textContent;
 
-  addValidator.hideInputError();
+  editValidator.hideInputError();
 });
 
 buttonCloseEditPopup.addEventListener('click', function () {
@@ -139,7 +139,7 @@ const addInitialCards = initialCards.forEach(function(item) {
 const addValidator = new FormValidator(validForm, addForm);
 addValidator.enableValidation();
 
-const aditValidator = new FormValidator(validForm, editForm);
-aditValidator.enableValidation();
+const editValidator = new FormValidator(validForm, editForm);
+editValidator.enableValidation();
 
 export {openPopup};
