@@ -1,0 +1,68 @@
+.popup__text {
+  max-width: 354px;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  position: static;
+  margin: 0;
+  height: 36px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.popup__text:focus {
+  outline: none;
+}
+
+.popup__text:last-of-type {
+  margin-top: 13px;
+}
+
+.popup__text::placeholder {
+  font-family: inherit;
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.popup__text::-webkit-input-placeholder {
+  font-family: inherit;
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.popup__text:-moz-placeholder {
+  font-family: inherit;
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.popup__text::-moz-placeholder {
+  font-family: inherit;
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.popup__text:-ms-input-placeholder {
+  font-family: inherit;
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.popup__text::-ms-input-placeholder {
+  font-family: inherit;
+  color: #000;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
