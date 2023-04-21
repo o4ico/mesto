@@ -7,20 +7,22 @@ class FormValidator {
     this._inputErrorClass = validForm.inputErrorClass;
     this._errorClass = validForm.errorClass;
     this._formElement = formElement;
-    this._inputElement = this._formElement.querySelectorAll(this._inputSelector);
+    this._inputList = Array.from(formElement.querySelectorAll(this._inputSelector));
+    this._buttonElement = formElement.querySelector(this._submitButtonSelector);
+
   }
 
 // Показ текста ошибки
-_showInputError (errorMessage) {
+_showInputError () {
 
   const errorElement = this._formElement.querySelector(`.${this._inputElement.id}-text-error`);
   this._inputElement.classList.add(this._inputErrorClass);
-  errorElement.textContent = errorMessage;
+  errorElement.textContent = this._inputElement.validationMessage;
   errorElement.classList.add(this._errorClass);
 };
 
 // Скрыть текст ошибки
-hideInputError () {
+_hideInputError () {
   
   const errorElement = this._formElement.querySelector(`.${this._inputElement.id}-text-error`);
   this._inputElement.classList.remove(this._inputErrorClass);
@@ -32,8 +34,7 @@ hideInputError () {
 _hasInvalidInput () {
 
   return this._inputList.some((inputElement) => {
-    this._inputElement = inputElement;
-    return !this._inputElement.validity.valid;
+    return !inputElement.validity.valid;
   })
 }; 
 
@@ -55,52 +56,60 @@ _activeSubmitButton () {
 _toggleButtonState () {
 
   if (this._hasInvalidInput()) {
-    this._disabledSubmitButton(this._buttonElement);
+    this._disabledSubmitButton();
     
   } else {
-    this._activeSubmitButton(this._buttonElement);
+    this._activeSubmitButton();
   }
 }; 
 
 // функция, которая проверяет валидность поля
-_isValid () {
+_isValid (inputElement) {
 
-  if (!this._inputElement.validity.valid) {
-    this._showInputError(this._inputElement.validationMessage);
+  if (!inputElement.validity.valid) {
+    this._showInputError();
   } else {
-    this.hideInputError();
+    this._hideInputError();
   }
 };
 
 // добавляем обработчик для всех полей формы
 _setEventListeners () {
 
-  this._inputList = Array.from(this._formElement.querySelectorAll(this._inputSelector));
-  this._buttonElement = this._formElement.querySelector(this._submitButtonSelector);
-
   this._toggleButtonState();
 
   this._inputList.forEach((inputElement) => {
-    this._inputElement = inputElement;
-    this._inputElement.addEventListener('input', () => {
-
-      this._isValid();
+    
+    inputElement.addEventListener('input', () => {
+      this._inputElement = inputElement;
+      this._isValid(inputElement);
 
       this._toggleButtonState();
     });
   });
 
   this._formElement.addEventListener('reset', () => {
-
-    this._disabledSubmitButton(this._buttonElement);
+  
+    this._disabledSubmitButton();
   })
+
+
+};
+
+disabledSubmit() {
+    this._inputList.forEach((inputElement) => {
+    this._inputElement = inputElement;
+    this._hideInputError();
+  });
+
+  this._toggleButtonState();
 };
 
 enableValidation () {
 
   this._setEventListeners();
-  this.hideInputError();
-};
+}; 
+
 }
 
 export {FormValidator};

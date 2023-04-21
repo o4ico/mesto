@@ -64,7 +64,7 @@ editButton.addEventListener('click', function() {
 
   jobInput.value = profileSubtitle.textContent;
 
-  editValidator.hideInputError();
+  editValidator.disabledSubmit();
 });
 
 buttonCloseEditPopup.addEventListener('click', function () {
@@ -99,7 +99,7 @@ const buttonSubmitAddPopup = addPopup.querySelector('.popup__submit-button_add-c
 addButton.addEventListener('click', function() {
   openPopup(addPopup);
   addForm.reset();
-  addValidator.hideInputError();
+  addValidator.disabledSubmit();
 });
 
 buttonCloseAddPopup.addEventListener('click', function() {

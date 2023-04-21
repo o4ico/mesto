@@ -22,28 +22,29 @@ class Card {
 
     return cardTemplate;
   }
-
-  _setEventListeners() {
   //лайк
-  this._elementLike.addEventListener('click', () => {
-
-    this._elementLike.classList.toggle('card__like-button_active');
-  
-  });
+  _handleLikeClick() {
+      this._elementLike.classList.toggle('card__like-button_active');
+  }
   //удаление
-  this._elementDelite.addEventListener('click', () => {
-
+  _handleDeliteClick() {
     this._element.remove();
-  });
-
+  }
   //картинка
-  this._elementImage.addEventListener('click', () => {
-
+  _handleImageClick() {
     openPopup(imagePopup);
     image.src = this._elementImage.src;
     image.alt = this._elementText.textContent;
     title.textContent = this._elementText.textContent;
-  });
+  }
+
+  _setEventListeners() {
+  
+  this._elementLike.addEventListener('click', () => this._handleLikeClick());
+  
+  this._elementDelite.addEventListener('click', () => this._handleDeliteClick());
+  
+  this._elementImage.addEventListener('click', () => this._handleImageClick());
   }
 
   createCard = () => {
