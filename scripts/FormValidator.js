@@ -87,13 +87,6 @@ _setEventListeners () {
       this._toggleButtonState();
     });
   });
-
-  this._formElement.addEventListener('reset', () => {
-  
-    this._disabledSubmitButton();
-  })
-
-
 };
 
 disabledSubmit() {

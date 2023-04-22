@@ -27,7 +27,7 @@ const closePopupEsc = (evt) => {
 // закрытие popup на оверлей
 const popupList = Array.from(document.querySelectorAll('.popup')); // все попапы на странице
 popupList.forEach((popup) => { // итерируем массив. объявляя каждый попап в переменную popup
-  popup.addEventListener('mouseup', (evt) => { // на каждый попап устанавливаем слушателя события
+  popup.addEventListener('mousedown', (evt) => { // на каждый попап устанавливаем слушателя события
     const targetClassList = evt.target.classList; // запишем в переменную класс элемента, на котором произошло событие
     if (targetClassList.contains('popup')) { // проверяем наличие класса попапа
       closePopup(popup); // если один из классов присутствует, то закрываем попап
@@ -106,6 +106,15 @@ buttonCloseAddPopup.addEventListener('click', function() {
   closePopup(addPopup);
 });
 
+function createCard (data, templateSelector) {
+
+  const card = new Card(data, templateSelector);
+
+  const cardElement = card.createCard();
+
+  return cardElement;
+}
+
 function handleFormSubmitAdd (evt) {
 
   evt.preventDefault();
@@ -115,11 +124,7 @@ function handleFormSubmitAdd (evt) {
   link: linkInput.value
   };
 
-  const card = new Card(data, '#card-template');
-
-  const cardElement = card.createCard();
-
-  cardContainer.prepend(cardElement);
+  cardContainer.prepend(createCard(data, '#card-template'));
 
   closePopup(addPopup);
 
