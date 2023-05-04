@@ -1,16 +1,10 @@
-import {openPopup} from "./index.js";
+export class Card {
 
-//попап с картинкой
-const imagePopup = document.querySelector('.popup_image');
-const image = document.querySelector('.popup__image');
-const title = document.querySelector('.popup__image-title');
-
-class Card {
-
-  constructor(data, templateSelector) {
+  constructor({ data, handleCardClick },  templateSelector) {
     this._templateSelector = templateSelector;
     this._name = data.name;
     this._link = data.link;
+    this._handleCardClick = handleCardClick;
   }
 
   _getTemplate() {
@@ -30,21 +24,14 @@ class Card {
   _handleDeliteClick() {
     this._element.remove();
   }
-  //картинка
-  _handleImageClick() {
-    openPopup(imagePopup);
-    image.src = this._elementImage.src;
-    image.alt = this._elementText.textContent;
-    title.textContent = this._elementText.textContent;
-  }
 
   _setEventListeners() {
   
   this._elementLike.addEventListener('click', () => this._handleLikeClick());
   
   this._elementDelite.addEventListener('click', () => this._handleDeliteClick());
-  
-  this._elementImage.addEventListener('click', () => this._handleImageClick());
+
+  this._elementImage.addEventListener('click', () => this._handleCardClick({name: this._name, link: this._link}));
   }
 
   createCard = () => {
@@ -66,4 +53,3 @@ class Card {
   }
 }
 
-export {Card, imagePopup};
