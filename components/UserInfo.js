@@ -5,24 +5,16 @@ export class UserInfo {
     this._profileJob = document.querySelector(jobSelector);
   }
 
-  _getUserInfo() {
+  getUserInfo() {
     return {
       nameProfile: this._profileName.textContent,
       aboutMe: this._profileJob.textContent,
     };
   }
-  _setUserInfo(data) {
+  setUserInfo(data) {
   
     this._profileName.textContent = data.nameProfile;
 
     this._profileJob.textContent = data.aboutMe;
-  }
-
-  setInputValues(nameInput, jobInput) {
-
-    this._getUserInfo();
-
-    nameInput.value = this._profileName.textContent;
-    jobInput.value = this._profileJob.textContent;
   }
 }

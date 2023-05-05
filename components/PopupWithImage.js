@@ -2,10 +2,10 @@ import {Popup} from './Popup.js';
 
 export class PopupWithImage extends Popup {
   
-  constructor({ image, title }, popupSelector) {
+  constructor(popupSelector) {
     super(popupSelector);
-    this._image = image;
-    this._title = title;
+    this._image = this._popupElement.querySelector('.popup__image');
+    this._title = this._popupElement.querySelector('.popup__image-title');
   }
 
   open(data) {
@@ -13,9 +13,5 @@ export class PopupWithImage extends Popup {
     this._image.alt = data.name;
     this._title.textContent = data.name;
     super.open();
-  }
-
-  setEventListeners() {
-    super.setEventListeners();
   }
 }

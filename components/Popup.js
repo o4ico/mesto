@@ -1,32 +1,33 @@
 export class Popup {
 
   constructor(popupSelector) {
-    this._popupSelector = document.querySelector(popupSelector);
+    this._popupElement = document.querySelector(popupSelector);
+    this._popupCloseButton = this._popupElement.querySelector('.popup__close-button');
   }
 
   //закрытие-открытие попапов
   close() {
-    this._popupSelector.classList.remove('popup_opened');
-    document.removeEventListener('keydown', this._handleEscClose());
+    this._popupElement.classList.remove('popup_opened');
+    document.removeEventListener('keydown', this._handleEscClose);
   }
 
   open() {
-    this._popupSelector.classList.add('popup_opened');
-    document.addEventListener('keydown', this._handleEscClose());
+    this._popupElement.classList.add('popup_opened');
+    document.addEventListener('keydown', this._handleEscClose);
   }
   // закрытие popup на esc
-  _handleEscClose() {
-    this._popupSelector.addEventListener('keydown', (evt) => { 
-    if (evt.key === 'Escape') {
+  _handleEscClose(evt) {
+    if (evt.key === 'Escape')  {
       this.close();
+      console.log(evt);
+      console.log(this.close);
     };
-  });
   }
 
   // закрытие popup на оверлей
   _handleOverlayClose() {
 
-    this._popupSelector.addEventListener('mousedown', (evt) => { // на каждый попап устанавливаем слушателя события
+    this._popupElement.addEventListener('mousedown', (evt) => { // на каждый попап устанавливаем слушателя события
       const targetClassList = evt.target.classList; // запишем в переменную класс элемента, на котором произошло событие
       if (targetClassList.contains('popup')) { // проверяем наличие класса попапа
         this.close(); // если один из классов присутствует, то закрываем попап
@@ -36,7 +37,11 @@ export class Popup {
   }
 
   setEventListeners() {
-    this._handleEscClose();
+
+    this._popupCloseButton.addEventListener('click', (evt) => {
+      this.close();
+    })
+
     this._handleOverlayClose();
   }
 }

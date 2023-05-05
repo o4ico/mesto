@@ -47,6 +47,9 @@ const buttonCloseImagePopup = imagePopup.querySelector('.popup__close-button');
 const nameInput = document.querySelector('.popup__input_form_name');
 const jobInput = document.querySelector('.popup__input_form_about-me');
 
+const profileTitle = document.querySelector('.profile__title');
+const profileSubtitle = document.querySelector('.profile__subtitle');
+
 const editButton = document.querySelector('.profile__edit-button');
 
 const editPopup = document.querySelector('.popup_edit-profile');
@@ -64,5 +67,5 @@ const buttonCloseAddPopup = addPopup.querySelector('.popup__close-button');
 
 
 export {initialCards, validForm, cardContainer, imagePopup, image, title, buttonCloseImagePopup, 
-  nameInput, jobInput, editButton, editPopup, editForm, buttonCloseEditPopup, addButton,
+  nameInput, jobInput, profileTitle, profileSubtitle, editButton, editPopup, editForm, buttonCloseEditPopup, addButton,
   addPopup, addForm, buttonCloseAddPopup};
