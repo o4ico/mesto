@@ -8,19 +8,17 @@ export class Popup {
   //закрытие-открытие попапов
   close() {
     this._popupElement.classList.remove('popup_opened');
-    document.removeEventListener('keydown', this._handleEscClose);
+    document.removeEventListener('keydown', this._handleEscClose.bind(this));
   }
 
   open() {
     this._popupElement.classList.add('popup_opened');
-    document.addEventListener('keydown', this._handleEscClose);
+    document.addEventListener('keydown', this._handleEscClose.bind(this));
   }
   // закрытие popup на esc
   _handleEscClose(evt) {
     if (evt.key === 'Escape')  {
       this.close();
-      console.log(evt);
-      console.log(this.close);
     };
   }
 
