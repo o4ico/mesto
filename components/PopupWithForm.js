@@ -18,7 +18,7 @@ export class PopupWithForm extends Popup {
     
     return this._formValues;// возвращаем объект значений
   }
-
+ 
   close() {
     super.close();
     this._form.reset();

@@ -64,8 +64,6 @@ const addForm = addPopup.querySelector('.popup__form');
 
 const buttonCloseAddPopup = addPopup.querySelector('.popup__close-button');
 
-
-
 export {initialCards, validForm, cardContainer, imagePopup, image, title, buttonCloseImagePopup, 
   nameInput, jobInput, profileTitle, profileSubtitle, editButton, editPopup, editForm, buttonCloseEditPopup, addButton,
   addPopup, addForm, buttonCloseAddPopup};
