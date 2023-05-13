@@ -4,10 +4,10 @@
   background-color: #000;
   background-image: url(../../../images/edit.svg);
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: 10px;
   background-position: center;
   margin: 36px 0 0 20px;
-  padding: 7px;
+  padding: 10px;
   border: none;
   border: 1px solid #fff;
   cursor: pointer;

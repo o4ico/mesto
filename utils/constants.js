@@ -64,6 +64,16 @@ const addForm = addPopup.querySelector('.popup__form');
 
 const buttonCloseAddPopup = addPopup.querySelector('.popup__close-button');
 
+//редактирование аватарки
+
+const avatarPopup = document.querySelector('.popup_avatar');
+const avatarForm = avatarPopup.querySelector('.popup__form');
+
+const avatarInput = document.querySelector('.popup__input_form_avatar-link');
+
+const avatarButton = document.querySelector('.profile__avatar-button');
+const avatarImage = document.querySelector('.profile__avatar');
+
 export {initialCards, validForm, cardContainer, imagePopup, image, title, buttonCloseImagePopup, 
   nameInput, jobInput, profileTitle, profileSubtitle, editButton, editPopup, editForm, buttonCloseEditPopup, addButton,
-  addPopup, addForm, buttonCloseAddPopup};
+  addPopup, addForm, buttonCloseAddPopup, avatarButton, avatarImage, avatarPopup, avatarInput, avatarForm};

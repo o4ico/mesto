@@ -6,7 +6,7 @@ import {UserInfo} from '../components/UserInfo.js';
 import {FormValidator} from '../components/FormValidator.js';
 import {initialCards, validForm, cardContainer, imagePopup, image, title, buttonCloseImagePopup, 
   nameInput, jobInput, profileTitle, profileSubtitle, editButton, editPopup, editForm, buttonCloseEditPopup, addButton,
-  addPopup, addForm, buttonCloseAddPopup} from '../utils/constants.js';
+  addPopup, addForm, buttonCloseAddPopup, avatarButton, avatarImage, avatarPopup, avatarInput, avatarForm} from '../utils/constants.js';
 import {Section} from '../components/Section.js';
 import {Api} from '../components/Api.js';
 import './index.css';
@@ -16,8 +16,6 @@ const cardData = {};//-------------объект для хранения полу
 function handleCardClick(linkImage, text) {//-------------открытие попапа с картинкой
   popupWithImage.open(linkImage, text);
 }
-
-
 
 function handleDeliteClick(id) {//-------------удаление карточки
   popupWarning.open();
@@ -96,6 +94,10 @@ const popupEditProfile = new PopupWithForm({
         profileTitle.textContent = res.name;
         profileSubtitle.textContent = res.about;
       })
+      .then(() => {
+        popupEditProfile.activeSubmitButton();
+        popupEditProfile.close();
+      })
       .catch((err) => {
         console.log(err)
       })
@@ -124,6 +126,10 @@ const popupAddCard = new PopupWithForm({
       console.log(res);      
       cardsList.addItem(createCard(res), false);
     })
+    .then(() => {
+      popupAddCard.activeSubmitButton();
+      popupAddCard.close();
+    })
     .catch((err) => {
       console.log(err)
     })
@@ -140,11 +146,6 @@ popupAddCard.setEventListeners();
 
 //----------------------------------------------------------попап с редактированием аватарки
 
-const avatarPopup = document.querySelector('.popup_avatar');
-const avatarForm = avatarPopup.querySelector('.popup__form');
-
-const avatarInput = document.querySelector('.popup__input_form_avatar-link');
-
 const avatarValidator = new FormValidator(validForm, avatarForm);
 avatarValidator.enableValidation();
 
@@ -156,19 +157,21 @@ const popupAvatar = new PopupWithForm({
         userInfo.userData(res)
         userInfo.setUserAvatar();
       })
+      .then(() => {
+        popupAvatar.activeSubmitButton();
+        popupAvatar.close();
+      })
       .catch((err) => {
         console.log(err)
       })
   }
 },'.popup_avatar', '.popup__form', '.popup__input');
 
-const avatarButton = document.querySelector('.profile__avatar');
-
 avatarButton.addEventListener('click', () => {
   
   popupAvatar.open();
 
-  avatarInput.value = avatarButton.src;
+  avatarInput.value = avatarImage.src;
 
   avatarValidator.disabledSubmit();
 });
