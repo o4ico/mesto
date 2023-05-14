@@ -36,7 +36,7 @@ function handleLikeClick(cardId, isLiked) {//-------------лайки
 }
 
 function createCard(data) {//-------------функция создания новой карточки
-  const card = new Card({data: data}, handleCardClick, handleLikeClick, handleDeliteClick, userInfo.id, '#card-template');
+  const card = new Card({data: data}, handleCardClick, handleLikeClick, handleDeliteClick, userInfo.userId, '#card-template');
   cardData[data._id] = card;
   return card.createCard(); 
 };
@@ -63,6 +63,7 @@ Promise.all([
   api.getInitialCards()
 ])
 .then(res => {
+  userInfo.getUserData(res[0]);
   userInfo.setUserInfo(res[0]);
   userInfo.setUserAvatar(res[0]);
   console.log(res)
@@ -88,6 +89,7 @@ const popupEditProfile = new PopupWithForm({
   //тут data это реультат работы _getInputValues() из PopupWithForm
     handleFormSubmit: (data) => {
 
+      editValidator.disabledSubmitButton();//актив кнопка
       api.patchInfoServer(data)
       .then((res) => {
         userInfo.setUserInfo(res);
@@ -120,6 +122,7 @@ const popupAddCard = new PopupWithForm({
 
   handleFormSubmit: (data) => {
 
+    addValidator.disabledSubmitButton();//актив кнопка
     api.postCardServer(data)
     .then((res) => {
       console.log(res);      
@@ -152,6 +155,8 @@ avatarValidator.enableValidation();
 const popupAvatar = new PopupWithForm({
 
   handleFormSubmit: (data) => {
+
+    avatarValidator.disabledSubmitButton();//актив кнопка
     api.patchAvatarServer(data)
       .then((res) => {
         userInfo.setUserAvatar(res);
