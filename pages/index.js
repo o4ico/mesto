@@ -27,7 +27,7 @@ function handleLikeClick(cardId, isLiked) {//-------------лайки
   
     api.toggleLike(cardId, isLiked)
     .then((res) => {
-      cardData[cardId].likesSum(res.likes);
+      cardData[cardId].calclikesSum(res.likes);
     })
     .catch((err) => {
       console.log(err)
@@ -63,9 +63,8 @@ Promise.all([
   api.getInitialCards()
 ])
 .then(res => {
-  userInfo.userData(res[0]);
-  userInfo.setUserInfo();
-  userInfo.setUserAvatar();
+  userInfo.setUserInfo(res[0]);
+  userInfo.setUserAvatar(res[0]);
   console.log(res)
   cardsList.renderItems(res[1]);
 })
@@ -91,11 +90,11 @@ const popupEditProfile = new PopupWithForm({
 
       api.patchInfoServer(data)
       .then((res) => {
-        profileTitle.textContent = res.name;
-        profileSubtitle.textContent = res.about;
+        userInfo.setUserInfo(res);
       })
       .then(() => {
-        popupEditProfile.activeSubmitButton();
+        popupEditProfile.activeSubmitButton();//текст "сохранить"
+        editValidator.activeSubmitButton();//актив кнопка
         popupEditProfile.close();
       })
       .catch((err) => {
@@ -127,7 +126,8 @@ const popupAddCard = new PopupWithForm({
       cardsList.addItem(createCard(res), false);
     })
     .then(() => {
-      popupAddCard.activeSubmitButton();
+      popupAddCard.activeSubmitButton();//текст "создать"
+      addValidator.activeSubmitButton();//актив кнопка
       popupAddCard.close();
     })
     .catch((err) => {
@@ -154,11 +154,11 @@ const popupAvatar = new PopupWithForm({
   handleFormSubmit: (data) => {
     api.patchAvatarServer(data)
       .then((res) => {
-        userInfo.userData(res)
-        userInfo.setUserAvatar();
+        userInfo.setUserAvatar(res);
       })
       .then(() => {
-        popupAvatar.activeSubmitButton();
+        popupAvatar.activeSubmitButton();//текст "сохранить"
+        avatarValidator.activeSubmitButton();//актив кнопка
         popupAvatar.close();
       })
       .catch((err) => {

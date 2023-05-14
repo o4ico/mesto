@@ -6,14 +6,6 @@ export class UserInfo {
     this._profileAvatar = document.querySelector(avatarSelector);
   }
 
-  userData({name, about, avatar, cohort, _id}) {
-    this._name = name;
-    this._about = about;
-    this._avatar = avatar;
-    this._cohort = cohort;
-    this.id = _id;
-  }
-
   getUserInfo() {
     return {
       name: this._profileName.textContent,
@@ -21,12 +13,12 @@ export class UserInfo {
       avatar: this._profileAvatar.src
     };
   }
-  setUserInfo() {
-    this._profileName.textContent = this._name;
-    this._profileJob.textContent = this._about;
+  setUserInfo(res) {
+    this._profileName.textContent = res.name;
+    this._profileJob.textContent = res.about;
   }
 
-  setUserAvatar() {
-    this._profileAvatar.src = this._avatar;
+  setUserAvatar(res) {
+    this._profileAvatar.src = res.avatar;
   }
 }

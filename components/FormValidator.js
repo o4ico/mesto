@@ -39,16 +39,12 @@ _hasInvalidInput () {
 }; 
 
 // неактивная кнопка popup
-_disabledSubmitButton () {
-
-  this._buttonElement.classList.add(this._inactiveButtonClass);
+disabledSubmitButton () {
   this._buttonElement.disabled = true;
 };
 
 // активная кнопка popup
-_activeSubmitButton () {
-
-  this._buttonElement.classList.remove(this._inactiveButtonClass);
+activeSubmitButton () {
   this._buttonElement.disabled = false;
 };
 
@@ -56,10 +52,11 @@ _activeSubmitButton () {
 _toggleButtonState () {
 
   if (this._hasInvalidInput()) {
-    this._disabledSubmitButton();
-    
+    this._buttonElement.classList.add(this._inactiveButtonClass);
+    this.disabledSubmitButton();
   } else {
-    this._activeSubmitButton();
+    this._buttonElement.classList.remove(this._inactiveButtonClass);
+    this.activeSubmitButton();
   }
 }; 
 

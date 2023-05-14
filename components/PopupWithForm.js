@@ -30,21 +30,21 @@ export class PopupWithForm extends Popup {
   _disabledSubmitButton() {
     this._disabledSubmitButtonText = 'Сохранение...';
     this._popupSubmitButton.value = this._disabledSubmitButtonText;
-    this._popupSubmitButton.disabled = true;
+    this._popupSubmitButton.disabled = true;//можно оставить блокировку кнопки тут?, при вызове блокировки
+    //в index.js с помощью метода disabledSubmitButton() из FormValidator, кнопка не успевает блокироваться и
+    //пользователь может создать много карточек из одной формы
   }
 
   activeSubmitButton() {
     this._popupSubmitButton.value = this._activeSubmitButtonText;
-    this._popupSubmitButton.disabled = false;
   }
 
   setEventListeners() {
     super.setEventListeners();
-    // добавим вызов функции _handleFormSubmit
     this._form.addEventListener('submit', (evt) => {
       evt.preventDefault();
-      this._disabledSubmitButton();
-      this._handleFormSubmit(this._getInputValues());// передадим ей объект — результат работы _getInputValues
+      this._disabledSubmitButton();//и ещё по моей логике смена надписи при сохранении с валидацией никак не связанна
+      this._handleFormSubmit(this._getInputValues());
       //activeSubmitButton();
       //this.close();
     });

@@ -25,7 +25,6 @@ export class Card {
   //лайк
   _handleLikeCardClick() {
     this._handleLikeClick(this._id, this._isLiked());
-    this._elementLike.classList.toggle('card__like-button_active');
   }
 
   //удаление
@@ -35,6 +34,7 @@ export class Card {
 
   deleteCard() {
     this._element.remove();
+    this._element = null;
   }
 
   _isLiked () {
@@ -44,8 +44,14 @@ export class Card {
   }
 
 
-  likesSum (data) {
+  calclikesSum (data) {
     this._likes = data;
+    if (this._isLiked()) {
+      this._elementLike.classList.add('card__like-button_active');
+    } else {
+      this._elementLike.classList.remove('card__like-button_active');
+    }
+    
     return this._elementLikes.textContent = this._likes.length;
   }
 
@@ -75,12 +81,9 @@ export class Card {
     this._elementImage.alt = this._name;
     this._elementText.textContent = this._name;
     this._elementLikes.textContent = this._likes.length;
-
-    if (this._isLiked()) {
-      this._elementLike.classList.add('card__like-button_active');
-    } else {
-      this._elementLike.classList.remove('card__like-button_active');
-    }
+    
+    this.calclikesSum(this._likes);
+    
 
     if (this._owner._id !== this._userId) {
       this._elementDelete.remove();
