@@ -6,6 +6,11 @@ export class UserInfo {
     this._profileAvatar = document.querySelector(avatarSelector);
   }
 
+
+  getUserData({_id}) {
+    this.userId = _id;
+  }
+
   getUserInfo() {
     return {
       name: this._profileName.textContent,
