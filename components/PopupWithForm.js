@@ -42,8 +42,6 @@ export class PopupWithForm extends Popup {
       evt.preventDefault();
       this._disabledSubmitButton();
       this._handleFormSubmit(this._getInputValues());
-      //activeSubmitButton();
-      //this.close();
     });
     
   }
