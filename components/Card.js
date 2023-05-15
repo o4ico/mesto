@@ -44,7 +44,7 @@ export class Card {
   }
 
 
-  calclikesSum (data) {
+  calcLikesSum (data) {
     this._likes = data;
     if (this._isLiked()) {
       this._elementLike.classList.add('card__like-button_active');
@@ -82,7 +82,7 @@ export class Card {
     this._elementText.textContent = this._name;
     this._elementLikes.textContent = this._likes.length;
     
-    this.calclikesSum(this._likes);
+    this.calcLikesSum(this._likes);
     
 
     if (this._owner._id !== this._userId) {

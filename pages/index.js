@@ -27,7 +27,7 @@ function handleLikeClick(cardId, isLiked) {//-------------лайки
   
     api.toggleLike(cardId, isLiked)
     .then((res) => {
-      cardData[cardId].calclikesSum(res.likes);
+      cardData[cardId].calcLikesSum(res.likes);
     })
     .catch((err) => {
       console.log(err)
@@ -95,14 +95,16 @@ const popupEditProfile = new PopupWithForm({
         userInfo.setUserInfo(res);
       })
       .then(() => {
-        popupEditProfile.activeSubmitButton();//текст "сохранить"
+
         editValidator.activeSubmitButton();//актив кнопка
         popupEditProfile.close();
       })
       .catch((err) => {
         console.log(err)
       })
-      
+      .finally(() => {
+        popupEditProfile.activeSubmitButton();//текст "сохранить"
+      })
     }
 },'.popup_edit-profile', '.popup__form', '.popup__input');
   
@@ -129,12 +131,14 @@ const popupAddCard = new PopupWithForm({
       cardsList.addItem(createCard(res), false);
     })
     .then(() => {
-      popupAddCard.activeSubmitButton();//текст "создать"
       addValidator.activeSubmitButton();//актив кнопка
       popupAddCard.close();
     })
     .catch((err) => {
       console.log(err)
+    })
+    .finally(() => {
+      popupAddCard.activeSubmitButton();//текст "создать"
     })
   }
 },'.popup_add-card', '.popup__form', '.popup__input')
@@ -162,12 +166,15 @@ const popupAvatar = new PopupWithForm({
         userInfo.setUserAvatar(res);
       })
       .then(() => {
-        popupAvatar.activeSubmitButton();//текст "сохранить"
+    
         avatarValidator.activeSubmitButton();//актив кнопка
         popupAvatar.close();
       })
       .catch((err) => {
         console.log(err)
+      })
+      .finally(() => {
+        popupAvatar.activeSubmitButton();//текст "сохранить"
       })
   }
 },'.popup_avatar', '.popup__form', '.popup__input');
@@ -175,8 +182,6 @@ const popupAvatar = new PopupWithForm({
 avatarButton.addEventListener('click', () => {
   
   popupAvatar.open();
-
-  avatarInput.value = avatarImage.src;
 
   avatarValidator.disabledSubmit();
 });
@@ -189,6 +194,9 @@ const popupWarning = new PopupWithWarning({
     api.deleteCardServer(cardId)
       .then((res) => {
         cardData[cardId].deleteCard();
+      })
+      .then(() => {
+        popupWarning.close();
       })
       .catch((err) => {
         console.log(err)

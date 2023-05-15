@@ -17,7 +17,6 @@ export class PopupWithWarning extends Popup {
     this._popupSubmitButton.addEventListener('click', (evt) => {
       evt.preventDefault();
       this._handleFormSubmit(this._id);
-      super.close();
     }); 
   }
 }
